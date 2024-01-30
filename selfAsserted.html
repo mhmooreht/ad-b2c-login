@@ -1070,9 +1070,11 @@
       termsOfUseLi.querySelector("input").type = "checkbox";
     }
     $(function () {
+      setTimeout( ()=>{
       setupPwdTogglers();
       addTermsOfUseLink();
       changeTitle();
+      }, 2000);
     });
   </script>
   </head>
