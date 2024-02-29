@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Sign up or sign in</title>
+    <title>HITRUST PSD | Sign up or sign in</title>
 
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -1290,73 +1290,5 @@
       </div>
     </div>
   </body>
-  <script>
-    function makePwdToggler(pwd) {
-      // Create show-password checkbox
-      var checkbox = document.createElement("input");
-      checkbox.setAttribute("type", "checkbox");
-      var id = pwd.id + "toggler";
-      checkbox.setAttribute("id", id);
-
-      var label = document.createElement("label");
-      label.setAttribute("for", id);
-      label.appendChild(document.createTextNode("show password"));
-
-      var div = document.createElement("div");
-      div.appendChild(checkbox);
-      div.appendChild(label);
-
-      // Add show-password checkbox under password input
-      pwd.insertAdjacentElement("afterend", div);
-
-      // Add toggle password callback
-      function toggle() {
-        if (pwd.type === "password") {
-          pwd.type = "text";
-        } else {
-          pwd.type = "password";
-        }
-      }
-      checkbox.onclick = toggle;
-      // For non-mouse usage
-      checkbox.onkeydown = toggle;
-    }
-
-    function setupPwdTogglers() {
-      var pwdInputs = document.querySelectorAll("input[type=password]");
-      for (var i = 0; i < pwdInputs.length; i++) {
-        makePwdToggler(pwdInputs[i]);
-      }
-    }
-
-    function addTermsOfUseLink() {
-      // find the terms of use label element
-      var termsOfUseLi = document.querySelector(
-        "#api .extension_termsOfUse_li .attrEntry"
-      );
-      // if (!termsOfUseLabel) {
-      //   console.log("tos label not found");
-      //   return;
-      // }
-      var element = document.createElement("a");
-      element.innerHTML = "View Terms of Use";
-      var tosNode = termsOfUseLi.appendChild(element);
-
-      // get the label text
-      var termsLabelText = tosNode.innerHTML;
-
-      // create a new <a> element with the same inner text
-      var termsOfUseUrl = "https://learn.microsoft.com/legal/termsofuse";
-      var termsOfUseLink = document.createElement("a");
-      element.setAttribute("href", termsOfUseUrl);
-      element.setAttribute("target", "_blank");
-
-      // replace the label text with the new element
-      termsOfUseLi.querySelector("input").type = "checkbox";
-    }
-    $(function () {
-      setupPwdTogglers();
-      addTermsOfUseLink();
-    });
-  </script>
+  <script></script>
 </html>
